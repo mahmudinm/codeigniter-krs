@@ -1,6 +1,8 @@
 <form action="<?= base_url(); ?>index.php/mahasiswa/update" method="POST" role="form">
     <legend>Update Data Mahasiswa</legend>
 
+    <input type="hidden" name="nim_hide" value="<?= $mahasiswa['nim']; ?>">
+
     <div class="form-group <?php echo (form_error('nim') ? 'has-error' : '') ?>">
         <label for="nim">Nim</label>
         <input type="text" class="form-control" id="nim" name="nim" placeholder="Isikan NIM" value="<?= $mahasiswa['nim'] ?>">

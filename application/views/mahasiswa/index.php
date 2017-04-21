@@ -21,7 +21,7 @@
                 <td><?= $mahasiswa->jurusan ?></td>
                 <td>
                     <a href="<?= base_url(); ?>index.php/mahasiswa/edit/<?= $mahasiswa->nim; ?>" class="btn btn-info btn-xs">Edit</a>
-                    <a href="#" class="btn btn-danger btn-xs">Delete</a>
+                    <a href="<?= base_url(); ?>index.php/mahasiswa/delete/<?= $mahasiswa->nim; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Apa anda yakin?')">Delete</a>
                 </td>
             </tr>
         <?php endforeach ?>        

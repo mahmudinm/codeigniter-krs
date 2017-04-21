@@ -38,19 +38,10 @@ class M_Mahasiswa extends CI_Model {
                      ->update('mahasiswa', $data);
     }
 
-    // public function deleteStudent($id){
-    //     return $this -> db
-    //                  -> where('ID',$id)
-    //                  -> delete('ogrenci');
-    // }
+    public function delete($nim){
+        return $this->db
+                     ->where('nim',$nim)
+                     ->delete('mahasiswa');
+    }
 
-
-
-    // public function rowControl($attr,$data){
-    //     return $this -> db
-    //                  -> where($attr,$data)
-    //                  -> get('ogrenci')
-    //                  -> result();
-    // }
-    
 }

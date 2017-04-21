@@ -49,6 +49,8 @@ class Mahasiswa extends CI_Controller {
 
     public function update()
     {
+        $nim_hide = $this->input->post('nim_hide');
+
         $data['nim'] = $this->input->post('nim');
         $data['nama'] = $this->input->post('nama');
         $data['fakultas'] = $this->input->post('fakultas');
@@ -60,8 +62,9 @@ class Mahasiswa extends CI_Controller {
         $this->form_validation->set_rules('jurusan', 'Jurusan', 'trim|required');
 
         if ($this->form_validation->run() == FALSE) {
-            // $this->template->build('mahasiswa/create'); 
-            return redirect('mahasiswa/edit'.$data['nim']);
+            $this->template->build('mahasiswa/edit', $data); 
+            // $this->load->view('mahasiswa/edit', $data);
+            // return redirect('mahasiswa/edit/'.$nim_hide);
             
         } else {
             $this->m_mahasiswa->update($data);
@@ -69,9 +72,10 @@ class Mahasiswa extends CI_Controller {
         }        
     }
 
-    public function delete()
+    public function delete($nim)
     {
-        
+        $this->m_mahasiswa->delete($nim);
+        redirect('mahasiswa');   
     }
 
 }
