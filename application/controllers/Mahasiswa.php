@@ -62,12 +62,11 @@ class Mahasiswa extends CI_Controller {
         $this->form_validation->set_rules('jurusan', 'Jurusan', 'trim|required');
 
         if ($this->form_validation->run() == FALSE) {
+            // $data['mahasiswa'] = $this->m_mahasiswa->find($nim_hide);
             $this->template->build('mahasiswa/edit', $data); 
-            // $this->load->view('mahasiswa/edit', $data);
-            // return redirect('mahasiswa/edit/'.$nim_hide);
             
         } else {
-            $this->m_mahasiswa->update($data);
+            $this->m_mahasiswa->update($data, $nim_hide);
             return redirect('mahasiswa');
         }        
     }
