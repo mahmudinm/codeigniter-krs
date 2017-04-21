@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title><?php echo $template['title']; ?></title>
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/bootstrap.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style.css">
+
 </head>
 <body>
     <nav class="navbar navbar-default" role="navigation">
@@ -30,9 +32,15 @@
         </div>
     </nav>
 
-    <?php echo $template['body']; ?>
+    
+    <div class="container">
+        <?php echo $template['body']; ?>
+    </div>
+    
+
 
     <script src="<?= base_url(); ?>assets/js/jquery-2.2.0.js"></script>
     <script src="<?= base_url(); ?>assets/js/bootstrap.js"></script>
+
 </body>
 </html>
