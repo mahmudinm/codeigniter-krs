@@ -24,7 +24,7 @@ class M_Mahasiswa extends CI_Model {
         $sql = "SELECT * FROM mahasiswa WHERE nim = ? ";
         $query = $this->db->query($sql, $nim);
         if ($query->num_rows() > 0) {
-          $result = $query->row_array();
+            $result = $query->row_array();
             return $result;
         } else {
             return array();
@@ -42,6 +42,14 @@ class M_Mahasiswa extends CI_Model {
         return $this->db
                      ->where('nim',$nim)
                      ->delete('mahasiswa');
+    }
+
+    public function nama()
+    {
+        return $this->db
+                    ->select('nama')
+                    ->get('mahasiswa')
+                    ->result();
     }
 
 }

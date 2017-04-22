@@ -44,4 +44,13 @@ class M_Matakuliah extends CI_Model {
                      ->delete('matakuliah');
     }
 
+
+    public function nama()
+    {
+        return $this->db
+                    ->select('nama')
+                    ->get('matakuliah')
+                    ->result();
+    }
+
 }

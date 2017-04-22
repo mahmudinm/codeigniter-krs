@@ -6,7 +6,7 @@ class Krs extends CI_Controller {
     function __construct()
     {
         parent::__construct();
-        $this->load->model('m_krs');
+        $this->load->model(['m_krs','m_matakuliah', 'm_mahasiswa']);
     }
 
     public function index()
@@ -17,7 +17,9 @@ class Krs extends CI_Controller {
 
     public function create()
     {
-        $this->template->build('krs/create');
+        $data['mahasiswas'] = $this->m_mahasiswa->nama();
+        $data['matakuliahs'] = $this->m_matakuliah->nama();
+        $this->template->build('krs/create', $data);
     }
 
     public function store()
