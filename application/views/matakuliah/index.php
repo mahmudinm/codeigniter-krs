@@ -6,6 +6,7 @@
     <thead>
         <tr>
             <th>Nama Matakuliah</th>
+            <th>Semester</th>
             <th>Fakultas</th>
             <th>Jurusan</th>
             <th>Action</th>
@@ -15,6 +16,7 @@
         <?php foreach ($matakuliahs as $matakuliah): ?>
             <tr>
                 <td><?= $matakuliah->nama ?></td>
+                <td><?= $matakuliah->semester ?></td>
                 <td><?= $matakuliah->fakultas ?></td>
                 <td><?= $matakuliah->jurusan ?></td>
                 <td>

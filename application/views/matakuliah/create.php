@@ -7,6 +7,12 @@
         <small class="block text-danger"><?= form_error('nama'); ?></small>
     </div>
 
+    <div class="form-group <?php echo (form_error('semester') ? 'has-error' : '') ?>">
+        <label for="semester">Semester</label>
+        <input type="text" class="form-control" id="semester" name="semester" placeholder="Isikan Semester" value="<?= set_value('semester'); ?>">
+        <small class="block text-danger"><?= form_error('semester'); ?></small>
+    </div>    
+
     <div class="form-group <?php echo (form_error('fakultas') ? 'has-error' : '') ?>">
         <label for="fakultas">Fakultas</label>
         <select name="fakultas" id="fakultas" class="form-control" required="required">
