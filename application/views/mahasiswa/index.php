@@ -7,6 +7,8 @@
         <tr>
             <th>Nim</th>
             <th>Nama</th>
+            <th>Semester</th>
+            <th>IPK</th>
             <th>Fakultas</th>
             <th>Jurusan</th>
             <th>Action</th>
@@ -17,6 +19,8 @@
             <tr>
                 <td><?= $mahasiswa->nim ?></td>
                 <td><?= $mahasiswa->nama ?></td>
+                <td><?= $mahasiswa->semester ?></td>
+                <td><?= $mahasiswa->ipk ?></td>
                 <td><?= $mahasiswa->fakultas ?></td>
                 <td><?= $mahasiswa->jurusan ?></td>
                 <td>

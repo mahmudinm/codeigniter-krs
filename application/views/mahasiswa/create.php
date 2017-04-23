@@ -3,14 +3,26 @@
 
     <div class="form-group <?php echo (form_error('nim') ? 'has-error' : '') ?>">
         <label for="nim">Nim</label>
-        <input type="text" class="form-control" id="nim" name="nim" placeholder="Isikan NIM">
+        <input type="text" class="form-control" id="nim" name="nim" placeholder="Isikan NIM" value="<?= set_value('nim'); ?>">
         <small class="block text-danger"><?= form_error('nim'); ?></small>
     </div>
 
     <div class="form-group <?php echo (form_error('nama') ? 'has-error' : '') ?>">
         <label for="nama">Nama</label>
-        <input type="text" class="form-control" id="nama" name="nama" placeholder="Isikan Nama">
+        <input type="text" class="form-control" id="nama" name="nama" placeholder="Isikan Nama" value="<?= set_value('nama'); ?>">
         <small class="block text-danger"><?= form_error('nama'); ?></small>
+    </div>
+
+    <div class="form-group <?php echo (form_error('semester') ? 'has-error' : '') ?>">
+        <label for="semester">Semester</label>
+        <input type="text" class="form-control" id="semester" name="semester" placeholder="Isikan Semester" value="<?= set_value('semester'); ?>">
+        <small class="block text-danger"><?= form_error('semester'); ?></small>
+    </div>
+
+    <div class="form-group <?php echo (form_error('ipk') ? 'has-error' : '') ?>">
+        <label for="ipk">IPK</label>
+        <input type="text" class="form-control" id="ipk" name="ipk" placeholder="Isikan IPK" value="<?= set_value('ipk'); ?>">
+        <small class="block text-danger"><?= form_error('ipk'); ?></small>
     </div>
 
     <div class="form-group <?php echo (form_error('fakultas') ? 'has-error' : '') ?>">

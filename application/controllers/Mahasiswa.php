@@ -24,11 +24,15 @@ class Mahasiswa extends CI_Controller {
     {
         $data['nim'] = $this->input->post('nim');
         $data['nama'] = $this->input->post('nama');
+        $data['semester'] = $this->input->post('semester');
+        $data['ipk'] = $this->input->post('ipk');
         $data['fakultas'] = $this->input->post('fakultas');
         $data['jurusan'] = $this->input->post('jurusan');
 
         $this->form_validation->set_rules('nim', 'Nim', 'trim|max_length[20]|numeric|is_unique[mahasiswa.nim]|required');
         $this->form_validation->set_rules('nama', 'Nama', 'trim|max_length[50]|required');
+        $this->form_validation->set_rules('semester', 'Semester', 'trim|numeric|required');
+        $this->form_validation->set_rules('ipk', 'IPK', 'trim|numeric|max_length[50]|required');
         $this->form_validation->set_rules('fakultas', 'Fakultas', 'trim|required');
         $this->form_validation->set_rules('jurusan', 'Jurusan', 'trim|required');
 
@@ -53,11 +57,15 @@ class Mahasiswa extends CI_Controller {
 
         $data['nim'] = $this->input->post('nim');
         $data['nama'] = $this->input->post('nama');
+        $data['semester'] = $this->input->post('semester');
+        $data['ipk'] = $this->input->post('ipk');
         $data['fakultas'] = $this->input->post('fakultas');
         $data['jurusan'] = $this->input->post('jurusan');
 
         $this->form_validation->set_rules('nim', 'Nim', 'trim|max_length[20]|numeric|required');
         $this->form_validation->set_rules('nama', 'Nama', 'trim|max_length[50]|required');
+        $this->form_validation->set_rules('semester', 'Semester', 'trim|numeric|required');
+        $this->form_validation->set_rules('ipk', 'IPK', 'trim|numeric|max_length[50]|required');
         $this->form_validation->set_rules('fakultas', 'Fakultas', 'trim|required');
         $this->form_validation->set_rules('jurusan', 'Jurusan', 'trim|required');
 

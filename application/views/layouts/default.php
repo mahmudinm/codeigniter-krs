@@ -42,6 +42,11 @@
 
     <script src="<?= base_url(); ?>assets/js/jquery-2.2.0.js"></script>
     <script src="<?= base_url(); ?>assets/js/bootstrap.js"></script>
-
+    <script type="text/javascript">
+        $('.collapse').collapse();
+        $('input[type=checkbox]').on('click', function(e){
+            e.stopPropagation();
+        })
+    </script>
 </body>
 </html>
