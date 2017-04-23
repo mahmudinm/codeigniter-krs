@@ -7,6 +7,7 @@
         <tr>
             <th>Nama Matakuliah</th>
             <th>Semester</th>
+            <th>SKS</th>
             <th>Fakultas</th>
             <th>Jurusan</th>
             <th>Action</th>
@@ -17,6 +18,7 @@
             <tr>
                 <td><?= $matakuliah->nama ?></td>
                 <td><?= $matakuliah->semester ?></td>
+                <td><?= $matakuliah->sks ?></td>
                 <td><?= $matakuliah->fakultas ?></td>
                 <td><?= $matakuliah->jurusan ?></td>
                 <td>

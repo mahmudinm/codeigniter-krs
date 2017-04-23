@@ -1,18 +1,19 @@
 <form action="<?= base_url(); ?>index.php/krs/store" method="POST" role="form">
     <legend>Pengisian KRS</legend>
 
-    <div class="form-group <?php echo (form_error('nama') ? 'has-error' : '') ?>">
-        <label for="nama">Nama Mahasiswa</label>
-        <select name="" id="input" class="form-control" required="required">
+    <div class="form-group <?php echo (form_error('mahasiswa') ? 'has-error' : '') ?>">
+        <label for="mahasiswa">Nama Mahasiswa</label>
+        <select name="mahasiswa" id="input" class="form-control" required="required">
         <?php foreach ($mahasiswas as $mahasiswa): ?>
             <option value="<?= $mahasiswa->nama; ?>">(<?= $mahasiswa->nim ?>) <?= $mahasiswa->nama; ?></option>
         <?php endforeach ?>
         </select>
-        <small class="block text-danger"><?= form_error('nama'); ?></small>
+        <small class="block text-danger"><?= form_error('mahasiswa'); ?></small>
     </div>
 
-    <?php foreach ($matakuliahsm as $s): ?>
-        <h3>Semester <?= $s->semester; ?></h3>
+    <small class="block text-danger"><?= form_error('matakuliah'); ?></small>
+    <?php foreach ($matakuliahsm as $sm): ?>
+        <h3>Semester <?= $sm->semester; ?></h3>
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -21,6 +22,17 @@
                     <th>SKS</th>
                 </tr>
             </thead>
+                <?php $this->load->model('m_matakuliah'); ?>
+                <?php $matakuliah = $this->m_matakuliah->nama($sm->semester); ?>
+                <?php foreach ($matakuliah as $m): ?>
+                    <tr>
+                        <td><input type="checkbox" name="matakuliah[]" value="<?= $m->nama; ?>"></td>
+                        <td><?= $m->nama; ?></td>
+                        <td>
+                            <?= $m->sks; ?>
+                        </td>
+                    </tr>
+                <?php endforeach ?>
             <tbody>
             </tbody>
         </table>

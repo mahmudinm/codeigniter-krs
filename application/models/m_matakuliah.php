@@ -49,7 +49,7 @@ class M_Matakuliah extends CI_Model {
     {
         return $this->db
                     ->where('semester', $semester)
-                    ->select('nama')
+                    ->select('nama, sks')
                     ->get('matakuliah')
                     ->result();
     }
@@ -57,8 +57,9 @@ class M_Matakuliah extends CI_Model {
     public function semester()
     {
         return $this->db
-                    // ->select('semester, nama')
-                    // ->group_by('semester')
+                    ->select('semester')
+                    ->order_by('semester')
+                    ->group_by('semester')
                     ->get('matakuliah')
                     ->result();
     }
