@@ -45,10 +45,20 @@ class M_Matakuliah extends CI_Model {
     }
 
 
-    public function nama()
+    public function nama($semester)
     {
         return $this->db
+                    ->where('semester', $semester)
                     ->select('nama')
+                    ->get('matakuliah')
+                    ->result();
+    }
+
+    public function semester()
+    {
+        return $this->db
+                    // ->select('semester, nama')
+                    // ->group_by('semester')
                     ->get('matakuliah')
                     ->result();
     }

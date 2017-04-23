@@ -47,7 +47,7 @@ class M_Mahasiswa extends CI_Model {
     public function nama()
     {
         return $this->db
-                    ->select('nama')
+                    ->select('nim, nama')
                     ->get('mahasiswa')
                     ->result();
     }

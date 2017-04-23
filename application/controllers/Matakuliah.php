@@ -24,11 +24,13 @@ class Matakuliah extends CI_Controller {
     {
         $data['nama'] = $this->input->post('nama');
         $data['semester'] = $this->input->post('semester');        
+        $data['sks'] = $this->input->post('sks');        
         $data['fakultas'] = $this->input->post('fakultas');
         $data['jurusan'] = $this->input->post('jurusan');
 
         $this->form_validation->set_rules('nama', 'Nama', 'trim|max_length[50]|is_unique[matakuliah.nama]|required');
         $this->form_validation->set_rules('semester', 'Semester', 'trim|numeric|required');
+        $this->form_validation->set_rules('sks', 'SKS', 'trim|numeric|required');
         $this->form_validation->set_rules('fakultas', 'Fakultas', 'trim|required');
         $this->form_validation->set_rules('jurusan', 'Jurusan', 'trim|required');
 
@@ -54,11 +56,13 @@ class Matakuliah extends CI_Controller {
 
         $data['nama'] = $this->input->post('nama');
         $data['semester'] = $this->input->post('semester');
+        $data['sks'] = $this->input->post('sks');        
         $data['fakultas'] = $this->input->post('fakultas');
         $data['jurusan'] = $this->input->post('jurusan');
 
         $this->form_validation->set_rules('nama', 'Nama', 'trim|max_length[50]|required');
         $this->form_validation->set_rules('semester', 'Semester', 'trim|numeric|required');
+        $this->form_validation->set_rules('sks', 'SKS', 'trim|numeric|required');
         $this->form_validation->set_rules('fakultas', 'Fakultas', 'trim|required');
         $this->form_validation->set_rules('jurusan', 'Jurusan', 'trim|required');
 

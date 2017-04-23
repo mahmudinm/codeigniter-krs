@@ -5,33 +5,26 @@
         <label for="nama">Nama Mahasiswa</label>
         <select name="" id="input" class="form-control" required="required">
         <?php foreach ($mahasiswas as $mahasiswa): ?>
-            <option value="<?= $mahasiswa->nama; ?>"><?= $mahasiswa->nama; ?></option>
+            <option value="<?= $mahasiswa->nama; ?>">(<?= $mahasiswa->nim ?>) <?= $mahasiswa->nama; ?></option>
         <?php endforeach ?>
         </select>
         <small class="block text-danger"><?= form_error('nama'); ?></small>
     </div>
 
-
-    <div class="panel-group driving-license-settings" id="accordion">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                 <h4 class="panel-title">
-                                          <div class="checkbox">
-                    <label data-toggle="collapse" data-target="#collapseOne">
-                        <input type="checkbox"/> I have Driver License  
-                    </label>
-                </div>
-                                      </h4>
-
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse in">
-                <div class="panel-body">
-                asd
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <?php foreach ($matakuliahsm as $s): ?>
+        <h3>Semester <?= $s->semester; ?></h3>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Pilih</th>
+                    <th>Nama Matakuliah</th>
+                    <th>SKS</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    <?php endforeach ?>
 
     <div class="form-group <?php echo (form_error('jurusan') ? 'has-error' : '') ?>">
         <label for="jurusan">Jurusan</label>

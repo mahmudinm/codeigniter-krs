@@ -18,7 +18,8 @@ class Krs extends CI_Controller {
     public function create()
     {
         $data['mahasiswas'] = $this->m_mahasiswa->nama();
-        $data['matakuliahs'] = $this->m_matakuliah->nama();
+        $data['matakuliahs'] = $this->m_matakuliah->all();
+        $data['matakuliahsm'] = $this->m_matakuliah->semester();
         $this->template->build('krs/create', $data);
     }
 

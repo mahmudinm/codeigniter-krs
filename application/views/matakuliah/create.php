@@ -13,6 +13,12 @@
         <small class="block text-danger"><?= form_error('semester'); ?></small>
     </div>    
 
+    <div class="form-group <?php echo (form_error('sks') ? 'has-error' : '') ?>">
+        <label for="sks">SKS</label>
+        <input type="text" class="form-control" id="sks" name="sks" placeholder="Isikan SKS" value="<?= set_value('sks'); ?>">
+        <small class="block text-danger"><?= form_error('sks'); ?></small>
+    </div>    
+
     <div class="form-group <?php echo (form_error('fakultas') ? 'has-error' : '') ?>">
         <label for="fakultas">Fakultas</label>
         <select name="fakultas" id="fakultas" class="form-control" required="required">
