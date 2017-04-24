@@ -43,10 +43,31 @@
     <script src="<?= base_url(); ?>assets/js/jquery-2.2.0.js"></script>
     <script src="<?= base_url(); ?>assets/js/bootstrap.js"></script>
     <script type="text/javascript">
-        $('.collapse').collapse();
-        $('input[type=checkbox]').on('click', function(e){
-            e.stopPropagation();
-        })
+    $(document).ready(function(){
+        var jumlahsks=0;
+        var tmp=0;
+        $(':checkbox').click(function(){
+            if ($(this).is(":checked") == true ){
+                var tmp=parseInt($(this).attr('title'));
+                jumlahsks = jumlahsks + tmp;
+                if(jumlahsks > 24){
+                    alert('PERINGATAN :\n SKS saudara sudah lebih dari 24 SKS\n Pemilihan mata kuliah terakhir dibatalkan');
+                    $(this).attr("checked", false);
+                    jumlahsks=jumlahsks-tmp; 
+                    
+                }
+                var elem = document.getElementById("sks");
+                elem.value = jumlahsks;
+                            
+            } else {
+                var tmp=parseInt($(this).attr('title'));
+                jumlahsks = jumlahsks-tmp;
+                var elem = document.getElementById("sks");
+                elem.value = jumlahsks;
+            }
+        });
+    });
+    jumlahsks=0;
     </script>
 </body>
 </html>

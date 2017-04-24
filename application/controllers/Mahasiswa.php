@@ -70,7 +70,7 @@ class Mahasiswa extends CI_Controller {
         $this->form_validation->set_rules('jurusan', 'Jurusan', 'trim|required');
 
         if ($this->form_validation->run() == FALSE) {
-            // $data['mahasiswa'] = $this->m_mahasiswa->find($nim_hide);
+            $data['mahasiswa'] = $this->m_mahasiswa->find($nim_hide);
             $this->template->build('mahasiswa/edit', $data); 
             
         } else {

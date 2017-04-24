@@ -26,7 +26,7 @@
                 <?php $matakuliah = $this->m_matakuliah->nama($sm->semester); ?>
                 <?php foreach ($matakuliah as $m): ?>
                     <tr>
-                        <td><input type="checkbox" name="matakuliah[]" value="<?= $m->nama; ?>"></td>
+                        <td><input type="checkbox" name="matakuliah[]" value="<?= $m->nama; ?>" title="<?= $m->sks; ?>"></td>
                         <td><?= $m->nama; ?></td>
                         <td>
                             <?= $m->sks; ?>
@@ -55,6 +55,13 @@
         </select>
         <small class="block text-danger"><?= form_error('jurusan'); ?></small>
     </div>
+
+
+    <div class="form-group">
+        <label for="mahasiswa">Jumlah SKS</label>
+        <input type="text" name="sks" id="sks" class="form-control" title="sks">
+    </div>
+
 
     <br>
 
