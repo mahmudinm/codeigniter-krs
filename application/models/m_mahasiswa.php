@@ -7,7 +7,6 @@ class M_Mahasiswa extends CI_Model {
         parent::__construct();
     }
 
-
     public function all(){
         return $this->db
                     ->get('mahasiswa')

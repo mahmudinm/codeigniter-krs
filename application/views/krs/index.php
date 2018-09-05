@@ -24,6 +24,7 @@
                         <span class="label label-default"><?= $e ?></span>
                     <?php endforeach ?>
                 </td>
+
                 <td><?= $krs->sks; ?></td>
                 <td>Rp <?= number_format($krs->sks*100000); ?></td>
                 <td>

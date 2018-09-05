@@ -33,12 +33,9 @@
         </div>
     </nav>
 
-    
     <div class="container">
         <?php echo $template['body']; ?>
     </div>
-    
-
 
     <script src="<?= base_url(); ?>assets/js/jquery-2.2.0.js"></script>
     <script src="<?= base_url(); ?>assets/js/bootstrap.js"></script>
